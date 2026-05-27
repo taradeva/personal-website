@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Portrait placeholder">
+  <rect width="400" height="500" fill="#e6dccd"/>
+  <circle cx="200" cy="178" r="70" fill="#c46632" opacity=".22"/>
+  <path d="M92 430c18-94 78-142 108-142s90 48 108 142" fill="#7f5d43" opacity=".24"/>
+  <path d="M92 92h216v316H92z" fill="none" stroke="#7f5d43" stroke-width="2" opacity=".28"/>
+  <text x="200" y="458" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#625f56">Photo</text>
+</svg>

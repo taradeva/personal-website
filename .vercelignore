@@ -1,0 +1,10 @@
+.git
+.DS_Store
+node_modules
+npm-debug.log*
+.codex*
+
+# Keep the deployed site focused on the actual website bundle.
+don-julio-landscape-cover-mockup.png
+don-julio-redacted-influencer-shortlist-complete-preview.png
+don-julio-redacted-influencer-shortlist-complete.xlsx

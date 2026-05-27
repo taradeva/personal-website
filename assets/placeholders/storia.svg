@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 580" role="img" aria-label="Storia case study visual">
+  <rect width="1100" height="580" fill="#c8d0d8"/>
+  <rect x="150" y="145" width="300" height="250" rx="18" fill="#fbfaf6" stroke="#7f5d43" stroke-width="4"/>
+  <path d="M208 218h184M208 270h148M208 322h196" stroke="#7f5d43" stroke-width="5" opacity=".45"/>
+  <circle cx="790" cy="250" r="130" fill="#c46632" opacity=".18"/>
+  <path d="M620 242h320M620 302h260M620 362h210" stroke="#7f5d43" stroke-width="5" opacity=".55"/>
+  <text x="620" y="190" font-family="Georgia, serif" font-size="74" font-weight="600" fill="#1d1b18">Storia</text>
+</svg>

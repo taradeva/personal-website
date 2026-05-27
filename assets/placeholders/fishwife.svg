@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 580" role="img" aria-label="Fishwife case study visual">
+  <rect width="1100" height="580" fill="#d0d8c8"/>
+  <path d="M170 310c92-88 236-88 328 0-92 88-236 88-328 0z" fill="#fbfaf6" stroke="#7f5d43" stroke-width="4"/>
+  <circle cx="438" cy="302" r="12" fill="#c46632"/>
+  <path d="M160 250l-74-58v236l74-58" fill="#fbfaf6" stroke="#7f5d43" stroke-width="4"/>
+  <path d="M560 242h350M560 298h300M560 354h240" stroke="#7f5d43" stroke-width="5" opacity=".55"/>
+  <text x="560" y="190" font-family="Georgia, serif" font-size="74" font-weight="600" fill="#1d1b18">Fishwife</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 580" role="img" aria-label="Ghia case study visual">
+  <rect width="1100" height="580" fill="#e8d8c8"/>
+  <circle cx="820" cy="180" r="170" fill="#c46632" opacity=".18"/>
+  <rect x="130" y="110" width="290" height="360" rx="150" fill="#fbfaf6" stroke="#7f5d43" stroke-width="3"/>
+  <rect x="227" y="170" width="96" height="240" rx="48" fill="#7f5d43" opacity=".24"/>
+  <path d="M520 238h390M520 292h320M520 346h260" stroke="#7f5d43" stroke-width="5" opacity=".55"/>
+  <text x="520" y="190" font-family="Georgia, serif" font-size="74" font-weight="600" fill="#1d1b18">Ghia</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" role="img" aria-label="Workflow placeholder">
+  <rect width="700" height="420" fill="#e6dccd"/>
+  <rect x="70" y="90" width="160" height="92" fill="#fbfaf6" stroke="#7f5d43" stroke-width="2"/>
+  <rect x="270" y="164" width="160" height="92" fill="#fbfaf6" stroke="#7f5d43" stroke-width="2"/>
+  <rect x="470" y="238" width="160" height="92" fill="#fbfaf6" stroke="#7f5d43" stroke-width="2"/>
+  <path d="M230 136h40M430 210h40" stroke="#c46632" stroke-width="4"/>
+  <text x="350" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#625f56">Workflow Preview</text>
+</svg>
