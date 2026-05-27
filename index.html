@@ -33,12 +33,12 @@
       const projects = [
         {
           slug: "don-julio",
-          tag: "Campaign Execution",
+          tag: "Campaign Execution · PR & Influencer · Copy",
           title: "Don Julio x Flam - Dia de Muertos",
           shortTitle: "Don Julio",
-          description: "Campaign execution and brand communications for Diageo's largest US AR activation.",
-          image: "assets/don-julio/landscape-cover.png",
-          heroImage: "assets/don-julio/landscape-cover.png",
+          description: "Managed a campaign from ideation to polished executed assets, owning client coordination, influencer workflow, and launch communications.",
+          image: "assets/don-julio/bottle-stats-hero.jpg",
+          heroImage: "assets/don-julio/bottle-stats-hero.jpg",
           metadata: {
             Role: "Campaign Lead & Brand Communications",
             Timeline: "Dia de Muertos 2025 · 8 weeks",
@@ -68,9 +68,10 @@
               {
                 type: "prepGrid",
                 label: "mise en place",
+                note: "In the kitchen, mise en place means everything in its place before service; here, it means arranging the campaign inputs so launch could move cleanly.",
                 items: [
                   ["Campaign rollout", "I worked with the client to choose the right channel, then project-managed the campaign across stakeholders from planning through launch."],
-                  ["Creator strategy", "I built Flam's first influencer workflow for a campaign: tools, creator scouting, outreach criteria, negotiation support, and early contract materials."],
+                  ["Creator strategy", "I built Flam's AI-first influencer workflow for a campaign: tools, creator scouting, outreach criteria, negotiation support, and early contract materials."],
                   ["Launch communications", "I wrote and finalized public-facing campaign copy, working directly with Diageo and the PR agency on materials released across brand and partner channels."],
                 ],
               },
@@ -81,14 +82,9 @@
             ],
           },
           assets: [
-            "assets/don-julio/landscape-cover.png",
             "assets/don-julio/influencer-shortlist-preview.png",
           ],
           video: "assets/don-julio/linkedin-video.mp4",
-          download: {
-            href: "assets/don-julio/don-julio-redacted-influencer-shortlist.xlsx",
-            label: "Download redacted influencer shortlist",
-          },
           stats: [
             { number: "39K", label: "Instagram post + story impressions" },
             { number: "417", label: "entries into AR brand experience" },
@@ -97,10 +93,10 @@
         },
         {
           slug: "ghia",
-          tag: "Brand Strategy · Spec",
+          tag: "Brand Strategy · Campaign Concept · Spec",
           title: "Ghia - Defending the Original",
           shortTitle: "Ghia",
-          description: "How the first culture-forward non-alc brand stays the original when everyone copies your aesthetic.",
+          description: "A speculative strategy exercise on how an original culture-forward non-alc brand can defend its position once the category copies its aesthetic.",
           image: "assets/placeholders/ghia.svg", /* PLACEHOLDER: Project images */
           heroImage: "assets/placeholders/ghia.svg", /* PLACEHOLDER: Project images */
           metadata: {
@@ -133,10 +129,10 @@
         },
         {
           slug: "fishwife",
-          tag: "Brand Strategy · Spec",
+          tag: "Brand Strategy · Campaign Concept · Spec",
           title: "Fishwife - From Trend to Table",
           shortTitle: "Fishwife",
-          description: "Transitioning a viral cultural moment into a lasting pantry staple.",
+          description: "A speculative campaign direction for moving a viral food brand beyond novelty and into the rhythms of everyday cooking.",
           image: "assets/placeholders/fishwife.svg", /* PLACEHOLDER: Project images */
           heroImage: "assets/placeholders/fishwife.svg", /* PLACEHOLDER: Project images */
           metadata: {
@@ -169,10 +165,10 @@
         },
         {
           slug: "storia",
-          tag: "Brand Strategy + GTM",
+          tag: "Brand Strategy · GTM · Startup",
           title: "Storia - Building Brand from Zero",
           shortTitle: "Storia",
-          description: "Full brand foundation and go-to-market strategy for a neurodivergent literacy startup.",
+          description: "I built early brand voice, audience strategy, and go-to-market structure for a founder-led literacy product serving neurodivergent readers.",
           image: "assets/placeholders/storia.svg", /* PLACEHOLDER: Project images */
           heroImage: "assets/placeholders/storia.svg", /* PLACEHOLDER: Project images */
           metadata: {
@@ -316,7 +312,7 @@
                   <p className="eyebrow">Brand Marketing · NYC</p>
                   <h1>Tara Devaraj</h1>
                   <p className="hero-subhead">Brand builder. Campaign strategist. Storyteller.</p>
-                  <p className="hero-desc">I help brands figure out what they stand for - and make sure the right people feel it.</p>
+                  <p className="hero-desc">I help brands clarify what they stand for, then turn it into work that makes people feel something.</p>
                   <div className="mt-8 flex flex-wrap gap-3">
                     <button className="btn btn-primary" onClick={() => document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" })}>View My Work</button>
                     <button className="btn btn-secondary" onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}>Get In Touch</button>
@@ -377,7 +373,9 @@
                         <div className="project-overlay">View case study →</div>
                       </div>
                       <div className="project-body">
-                        <span>{project.tag}</span>
+                        <div className="project-tags" aria-label={`${project.shortTitle} project type`}>
+                          {project.tag.split(" · ").map((tag) => <span key={tag}>{tag}</span>)}
+                        </div>
                         <h3>{project.title}</h3>
                         <p>{project.description}</p>
                         <strong>View case study →</strong>
@@ -540,20 +538,27 @@
               <CaseSection id="strategy" title="The Strategy">{project.sections.strategy}</CaseSection>
               <CaseSection id="execution" title="Execution">
                 {project.sections.execution}
-                {project.video && (
-                  <video className="case-video" controls playsInline preload="metadata" poster={project.heroImage}>
-                    <source src={project.video} type="video/mp4" />
-                  </video>
-                )}
-                <div className="asset-grid">
-                  {project.assets.map((asset, index) => (
-                    <img key={asset} src={asset} alt={`${project.shortTitle} asset placeholder ${index + 1}`} />
-                  ))}
-                </div>
-                {project.download && (
-                  <a className="case-download" href={project.download.href} download>
-                    {project.download.label}
-                  </a>
+                {(project.video || project.assets?.length > 0) && (
+                  <div className={`case-proof ${project.video ? "case-proof--paired" : ""}`}>
+                    {project.video && (
+                      <figure>
+                        <video className="case-video" controls playsInline preload="metadata" poster={project.heroImage}>
+                          <source src={project.video} type="video/mp4" />
+                        </video>
+                        <figcaption>Mixed reality experience asset</figcaption>
+                      </figure>
+                    )}
+                    {project.assets?.length > 0 && (
+                      <div className="asset-grid">
+                        {project.assets.map((asset, index) => (
+                          <figure key={asset}>
+                            <img src={asset} alt={`${project.shortTitle} asset placeholder ${index + 1}`} />
+                            <figcaption>{project.video ? "Redacted creator shortlist document" : `${project.shortTitle} asset ${index + 1}`}</figcaption>
+                          </figure>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 )}
               </CaseSection>
               <CaseSection id="reflection" title="Reflection">{project.sections.reflection}</CaseSection>
@@ -580,7 +585,7 @@
           if (content?.type === "prepGrid") {
             return (
               <div className="prep-grid" key={content.label}>
-                <span className="prep-label">{content.label}</span>
+                <span className="prep-label" tabIndex="0" data-note={content.note}>{content.label}</span>
                 <div className="prep-items">
                   {content.items.map(([label, detail], index) => (
                     <div className="prep-item" key={label}>

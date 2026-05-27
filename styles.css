@@ -262,7 +262,7 @@ figcaption {
 }
 
 .skill-cloud span,
-.project-body span {
+.project-tags span {
   border: 1px solid var(--border);
   color: var(--muted);
   display: inline-flex;
@@ -474,9 +474,16 @@ figcaption {
   padding: 26px;
 }
 
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
 .project-body h3 {
   font-size: 27px;
-  margin: 16px 0 12px;
+  margin: 0 0 12px;
 }
 
 .project-body p {
@@ -698,9 +705,40 @@ figcaption {
 
 .prep-label {
   color: var(--accent-pop);
+  cursor: help;
+  display: inline-flex;
   font-size: 11px;
   letter-spacing: 0.14em;
+  position: relative;
   text-transform: uppercase;
+  width: fit-content;
+}
+
+.prep-label::after {
+  background: var(--text);
+  color: var(--bg);
+  content: attr(data-note);
+  font-size: 12px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 1.45;
+  max-width: min(440px, calc(100vw - 48px));
+  opacity: 0;
+  padding: 12px 14px;
+  pointer-events: none;
+  position: absolute;
+  text-transform: none;
+  top: calc(100% + 10px);
+  transform: translateY(-4px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  width: max-content;
+  z-index: 4;
+}
+
+.prep-label:hover::after,
+.prep-label:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .prep-items {
@@ -741,41 +779,63 @@ figcaption {
   line-height: 1.5;
 }
 
-.asset-grid {
+.case-proof {
   display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 28px;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.case-proof--paired {
+  align-items: start;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(360px, 1.18fr);
+}
+
+.case-proof figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 
 .case-video {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   background: var(--text);
   border: 1px solid var(--border);
   display: block;
-  margin-top: 28px;
   object-fit: cover;
   width: 100%;
+}
+
+.asset-grid {
+  display: grid;
+  gap: 16px;
+  height: 100%;
 }
 
 .asset-grid img {
-  aspect-ratio: 3 / 2;
+  background: #fff;
   border: 1px solid var(--border);
+  display: block;
+  height: 100%;
+  max-height: none;
   object-fit: cover;
+  object-position: left top;
   width: 100%;
 }
 
-.case-download {
-  border-bottom: 1px solid var(--accent-pop);
-  color: var(--accent);
-  display: inline-block;
-  font-size: 15px;
-  margin-top: 20px;
-  text-decoration: none;
+.case-proof--paired .asset-grid figure {
+  height: 100%;
 }
 
-.case-download:hover {
-  color: var(--accent-pop);
+.case-proof--paired .asset-grid img {
+  aspect-ratio: 1.92 / 1;
+}
+
+.case-proof figcaption {
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  margin-top: 9px;
+  text-transform: uppercase;
 }
 
 .stats-row {
@@ -889,6 +949,7 @@ figcaption {
   .work-grid,
   .meta-bar,
   .asset-grid,
+  .case-proof--paired,
   .stats-row,
   .prep-items {
     grid-template-columns: 1fr;
@@ -961,5 +1022,9 @@ figcaption {
 
   .stat strong {
     font-size: 48px;
+  }
+
+  .case-proof--paired .asset-grid img {
+    aspect-ratio: 4 / 3;
   }
 }
