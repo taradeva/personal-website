@@ -97,13 +97,29 @@
         color: var(--muted);
         font-size: 13px;
         letter-spacing: 0.08em;
+        position: relative;
         text-decoration: none;
         text-transform: uppercase;
         transition: color 0.2s ease;
       }
 
-      .resume-links a:hover {
+      .resume-links a:hover,
+      .resume-links a.is-active {
         color: var(--accent);
+      }
+
+      .resume-links a.is-active::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='110' height='14' viewBox='0 0 110 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 9C20 5 37 8 55 7C75 6 91 5 107 8' stroke='%23d26a3d' stroke-width='6' stroke-linecap='round' stroke-opacity='0.72'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        bottom: -8px;
+        content: "";
+        height: 10px;
+        left: -7%;
+        pointer-events: none;
+        position: absolute;
+        transform: rotate(-0.6deg);
+        width: 114%;
       }
 
       .resume-wrap {
@@ -113,10 +129,7 @@
       }
 
       .resume-hero {
-        display: grid;
-        gap: 40px;
-        grid-template-columns: minmax(0, 1fr) 300px;
-        padding: 92px 22px 76px;
+        padding: 64px 22px 48px;
       }
 
       .eyebrow {
@@ -128,52 +141,35 @@
       }
 
       .resume-hero h1 {
-        font-size: clamp(58px, 9vw, 108px);
-        margin-bottom: 18px;
+        font-size: clamp(52px, 8vw, 92px);
+        margin-bottom: 12px;
       }
 
       .resume-subtext {
+        align-items: center;
         color: var(--muted);
-        font-size: clamp(22px, 3vw, 34px);
-        line-height: 1.25;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 14px;
+        gap: 10px;
+        letter-spacing: 0.02em;
+        line-height: 1.4;
         max-width: 800px;
       }
 
-      .resume-contact {
-        align-self: end;
-        border: 1px solid var(--border);
-        display: grid;
+      .resume-subtext a {
+        color: inherit;
+        text-decoration-color: rgba(127, 93, 67, 0.34);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
       }
 
-      .resume-contact div {
-        border-bottom: 1px solid var(--border);
-        padding: 18px;
-      }
-
-      .resume-contact div:last-child {
-        border-bottom: 0;
-      }
-
-      .resume-contact span {
-        color: var(--muted);
-        display: block;
-        font-size: 11px;
-        letter-spacing: 0.12em;
-        margin-bottom: 8px;
-        text-transform: uppercase;
-      }
-
-      .resume-contact strong,
-      .resume-contact a {
-        color: var(--text);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.35;
-        text-decoration: none;
+      .resume-subtext span {
+        color: var(--accent);
       }
 
       .section {
-        padding: 80px 0;
+        padding: 48px 0;
       }
 
       .section-alt {
@@ -184,7 +180,7 @@
         display: grid;
         gap: 16px;
         grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
-        margin-bottom: 34px;
+        margin-bottom: 24px;
       }
 
       .section-heading--center {
@@ -200,7 +196,7 @@
       }
 
       .section-heading h2 {
-        font-size: clamp(38px, 5vw, 58px);
+        font-size: clamp(34px, 4.5vw, 50px);
       }
 
       .section-heading p {
@@ -211,44 +207,54 @@
 
       .differentiators {
         display: grid;
-        gap: 18px;
+        gap: 14px;
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .diff-card {
         background: var(--bg);
         border: 1px solid var(--border);
-        min-height: 360px;
-        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        min-height: 320px;
+        padding: 22px;
       }
 
-      .diff-card span,
+      .diff-card > span,
       .skill-area .eyebrow {
         color: var(--accent-pop);
         display: block;
         font-size: 11px;
         letter-spacing: 0.14em;
-        margin-bottom: 26px;
+        margin-bottom: 18px;
         text-transform: uppercase;
       }
 
       .diff-card h3 {
-        font-size: 34px;
-        margin-bottom: 10px;
+        font-size: 30px;
+        min-height: 60px;
+        margin-bottom: 14px;
       }
 
       .diff-school {
         color: var(--accent);
         font-size: 14px;
         line-height: 1.4;
-        margin-bottom: 22px;
+        margin-bottom: 16px;
+        min-height: 40px;
       }
 
       .diff-role {
         color: var(--accent);
         font-size: 14px;
         line-height: 1.4;
-        margin-bottom: 22px;
+        margin-bottom: 16px;
+        min-height: 40px;
+      }
+
+      .diff-school span,
+      .diff-role span {
+        display: block;
       }
 
       .subtle-link {
@@ -272,8 +278,33 @@
 
       .diff-card p:not(.diff-school):not(.diff-role) {
         color: var(--muted);
-        font-size: 15px;
-        line-height: 1.72;
+        font-size: 14px;
+        line-height: 1.58;
+      }
+
+      .diff-card--split {
+        grid-column: span 1;
+      }
+
+      .diff-card--split h3 {
+        font-size: 28px;
+      }
+
+      .diff-split-grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .diff-mini {
+        border-top: 1px solid var(--border);
+        padding-top: 14px;
+      }
+
+      .diff-mini .diff-school,
+      .diff-mini .diff-role {
+        margin-bottom: 12px;
+        min-height: 76px;
       }
 
       .skill-areas {
@@ -283,9 +314,9 @@
       .skill-area {
         border-bottom: 1px solid var(--border);
         display: grid;
-        gap: 36px;
-        grid-template-columns: minmax(240px, 0.42fr) minmax(0, 1fr);
-        padding: 42px 0;
+        gap: 28px;
+        grid-template-columns: minmax(220px, 0.34fr) minmax(0, 1fr);
+        padding: 30px 0;
       }
 
       .skill-area-header {
@@ -297,9 +328,18 @@
       .skill-headline {
         color: var(--text);
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(30px, 3.5vw, 44px);
+        font-size: clamp(24px, 3vw, 34px);
         font-weight: 600;
         line-height: 1.08;
+      }
+
+      .section-count {
+        color: var(--accent);
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        margin-bottom: 14px;
+        text-transform: uppercase;
       }
 
       .skill-proof {
@@ -310,7 +350,7 @@
       .proof-item {
         background: rgba(255, 255, 255, 0.34);
         border: 1px solid var(--border);
-        padding: 20px;
+        padding: 16px 18px;
       }
 
       .proof-item strong {
@@ -324,8 +364,27 @@
 
       .proof-item p {
         color: var(--muted);
-        font-size: 15px;
-        line-height: 1.68;
+        font-size: 14px;
+        line-height: 1.56;
+      }
+
+      .tool-chip {
+        background: rgba(127, 93, 67, 0.1);
+        border: 1px solid rgba(127, 93, 67, 0.16);
+        border-radius: 7px;
+        color: var(--text);
+        display: inline-block;
+        font-family: inherit;
+        font-size: 0.92em;
+        line-height: 1.1;
+        margin: 0 1px;
+        padding: 2px 7px 3px;
+        white-space: nowrap;
+      }
+
+      .metric {
+        color: var(--text);
+        font-weight: 600;
       }
 
       .resume-footer {
@@ -359,11 +418,34 @@
           padding-top: 64px;
         }
 
+        .resume-subtext {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        .resume-subtext span {
+          display: none;
+        }
+
         .differentiators {
           grid-template-columns: 1fr;
         }
 
+        .diff-split-grid {
+          grid-template-columns: 1fr;
+        }
+
         .diff-card {
+          grid-template-rows: none;
+          min-height: auto;
+        }
+
+        .diff-card h3,
+        .diff-school,
+        .diff-role,
+        .diff-mini .diff-school,
+        .diff-mini .diff-role {
           min-height: auto;
         }
 
@@ -390,7 +472,7 @@
         <a class="resume-brand" href="../index.html#/">Tara Devaraj</a>
         <div class="resume-links">
           <a href="../index.html#/">Portfolio</a>
-          <a href="index.html">Resume</a>
+          <a class="is-active" href="index.html">Resume</a>
           <a href="../index.html#/tools">Tools I've Tried</a>
           <a href="../index.html#/">About</a>
           <a href="mailto:taradevaraj@gmail.com">Contact</a>
@@ -402,52 +484,48 @@
       <div>
         <p class="eyebrow">Resume</p>
         <h1>Tara Devaraj</h1>
-        <p class="resume-subtext">Computer science. Culinary school. Startup experience.</p>
+        <p class="resume-subtext">
+          <a href="mailto:taradevaraj@gmail.com">taradevaraj@gmail.com</a>
+          <span>|</span>
+          <a href="https://linkedin.com/in/taradevaraj" target="_blank" rel="noreferrer">linkedin.com/in/taradevaraj</a>
+          <span>|</span>
+          <a href="tel:+15743867650">574-386-7650</a>
+        </p>
       </div>
-      <aside class="resume-contact" aria-label="Contact and background">
-        <div>
-          <span>Focus</span>
-          <strong>Brand marketing, campaign execution, content, influencer strategy, events, and GTM</strong>
-        </div>
-        <div>
-          <span>Education</span>
-          <strong>B.S. Computer Science · University of Notre Dame</strong>
-        </div>
-        <div>
-          <span>Training</span>
-          <strong>Culinary Arts · Culinary Institute of America</strong>
-        </div>
-      </aside>
     </header>
 
     <main>
       <section id="differentiators" class="section section-alt">
         <div class="resume-wrap">
           <div class="section-heading section-heading--center">
-            <h2>Three things most candidates don't bring.</h2>
-            <p>The combination is the differentiator.</p>
+            <h2>The combination most candidates don't bring.</h2>
           </div>
           <div class="differentiators">
             <article class="diff-card">
               <span>Tech Foundation</span>
               <h3>B.S. Computer Science</h3>
-              <p class="diff-school">University of Notre Dame<br>Aug 2020 - May 2024</p>
-              <p>I learn new platforms in hours, not weeks. My CS background means I understand how tools actually work, which makes me faster to adopt them and better at knowing when to trust (or question) what they produce. AI tools aren't a novelty to me. They're part of how I work every day, and I have the technical foundation to evaluate them critically.</p>
+              <p class="diff-school"><span>University of Notre Dame</span><span>Aug 2020 - May 2024</span></p>
+              <p>I learn new tools fast and understand how systems actually work. That makes me quick to adopt AI, automation, dashboards, and marketing platforms without losing judgment.</p>
             </article>
             <article class="diff-card">
               <span>Food &amp; Beverage</span>
               <h3>Culinary Arts</h3>
-              <p class="diff-school">Culinary Institute of America<br>Sep 2024 - Apr 2025</p>
-              <p>I understand food and beverage from the inside. Culinary school taught me to care about sourcing, flavor, craft, and the story behind what's on the table, exactly what brands like Twisted Alchemy are built on. I'm not a marketer who learned to talk about food. I cooked it. That changes how I think about product storytelling, wellness culture, and what makes someone reach for something.</p>
+              <p class="diff-school"><span>Culinary Institute of America</span><span>Sep 2024 - Apr 2025</span></p>
+              <p>I understand food and beverage from the inside: sourcing, flavor, craft, and the story behind what's on the table. That shapes how I think about CPG storytelling, wellness culture, and F&amp;B as an experience.</p>
             </article>
-            <article class="diff-card">
+            <article class="diff-card diff-card--split">
               <span>Startup Operator</span>
               <h3>Different Hat, Every Week</h3>
-              <p class="diff-school"><a class="subtle-link" href="https://flamapp.ai/" target="_blank" rel="noreferrer">Flam</a> · Direct report to CEO<br>Apr 2025 - Jan 2026</p>
-              <p>At Flam I was the single external-facing operator on every major US account — writing campaign copy, managing influencer strategy, running a $25K launch event, building GTM motions from scratch, and onboarding new hires, sometimes in the same week. I thrive without hand-holding. I see what needs to get done and I do it.</p>
-              <div class="diff-divider" aria-hidden="true"></div>
-              <p class="diff-role"><a class="subtle-link" href="https://storia.kids/#top" target="_blank" rel="noreferrer">Storia</a> · Freelance<br>Mar 2026 - Present</p>
-              <p>Building brand voice, audience strategy, and a pilot GTM structure for a founder-led literacy product serving neurodivergent K-1 readers.</p>
+              <div class="diff-split-grid">
+                <div class="diff-mini">
+                  <p class="diff-school"><span><a class="subtle-link" href="https://flamapp.ai/" target="_blank" rel="noreferrer">Flam</a> · Direct report to CEO</span><span>Apr 2025 - Jan 2026</span></p>
+                  <p>External-facing operator on every US account: copy, influencers, events, GTM motions.</p>
+                </div>
+                <div class="diff-mini">
+                  <p class="diff-role"><span><a class="subtle-link" href="https://storia.kids/#top" target="_blank" rel="noreferrer">Storia</a> · Freelance</span><span>Mar 2026 - Present</span></p>
+                  <p>Brand voice, audience strategy, and pilot GTM for a founder-led literacy product.</p>
+                </div>
+              </div>
             </article>
           </div>
         </div>
@@ -461,47 +539,50 @@
           <div class="skill-areas">
             <section class="skill-area">
               <div class="skill-area-header">
+                <span class="section-count">01 / 05</span>
                 <p class="eyebrow">Social Media &amp; Content Creation</p>
                 <p class="skill-headline">I shoot, edit, write, and publish.</p>
               </div>
               <div class="skill-proof">
                 <article class="proof-item">
-                  <strong>Flam Instagram — 21 published posts</strong>
-                  <p>Created and published 21 posts on Flam's brand Instagram during my tenure, including brand storytelling, short-form edits, and campaign content across collabs.<br>Used OneUp to schedule and manage content across Instagram, TikTok, YouTube Shorts, and LinkedIn, adapting copy, timing, and formats by platform.</p>
+                  <strong>Flam Instagram — <span class="metric">21</span> posts</strong>
+                  <p>Created and published <span class="metric">21 distinct posts</span> on Flam's brand Instagram during my tenure, including brand storytelling, short-form edits, and campaign content across collabs.<br>Used <span class="tool-chip">OneUp</span> to schedule and manage content across Instagram, TikTok, YouTube Shorts, and LinkedIn, adapting copy, timing, and formats by platform.</p>
                 </article>
                 <article class="proof-item">
                   <strong><a href="https://instagram.com/life.bytara" target="_blank" rel="noreferrer">@life.bytara — my personal brand</a></strong>
-                  <p>Reels, carousels, stories — all shot, edited in CapCut, written, and published by me.</p>
+                  <p>Reels, carousels, stories — all shot, edited in <span class="tool-chip">CapCut</span>, written, and published by me.</p>
                 </article>
               </div>
             </section>
 
             <section class="skill-area">
               <div class="skill-area-header">
+                <span class="section-count">02 / 05</span>
                 <p class="eyebrow">Copy &amp; Campaign Execution</p>
-                <p class="skill-headline">CMO-approved copy for Diageo. A founder podcast. A brand voice built from nothing.</p>
+                <p class="skill-headline">CMO-approved copy for Diageo. A founder-hosted podcast.</p>
               </div>
               <div class="skill-proof">
                 <article class="proof-item">
                   <strong>Don Julio × Flam — Día de Muertos</strong>
-                  <p>Led campaign messaging end-to-end for Diageo's AR collab — developing positioning, writing copy across all campaign touchpoints, and working directly with Diageo's PR team on how to frame the partnership publicly. All copy revised with the global brand team and signed off by the CMO. Ran across Don Julio's Instagram (468K followers) and Flam's Instagram (715K followers), driving 238K impressions.</p>
+                  <p>Led messaging for Diageo's AR collab: positioning, campaign copy, and PR framing. Copy was revised with their global brand team, signed off by our CMO, and ran across Don Julio's Instagram (468K followers) and Flam's Instagram (715K followers), driving <span class="metric">238K impressions</span>.</p>
                 </article>
                 <article class="proof-item">
-                  <strong>Flam Cast — founder thought leadership</strong>
-                  <p>Filmed and produced Flam's executive content series in NYC, positioning the founder as an expert in conversation with senior marketing leaders. Guests included the former CMO of McDonald's and the CEO of LUMA Partners; the series drove 3.8M impressions.</p>
+                  <strong>Flam Cast — founder-hosted podcast</strong>
+                  <p>Filmed and produced Flam's first executive content series, positioning the founder as a thought leader in conversation with senior marketing leaders. Guests included the former CMO of McDonald's and the CEO of LUMA Partners; the series drove <span class="metric">3.8M impressions</span>.</p>
                 </article>
               </div>
             </section>
 
             <section class="skill-area">
               <div class="skill-area-header">
+                <span class="section-count">03 / 05</span>
                 <p class="eyebrow">Influencer &amp; Partnerships</p>
-                <p class="skill-headline">23 creators sourced, vetted, and managed.</p>
+                <p class="skill-headline"><span class="metric">23</span> creators sourced, vetted, and managed.</p>
               </div>
               <div class="skill-proof">
                 <article class="proof-item">
                   <strong>Don Julio influencer strategy</strong>
-                  <p>Built Flam's first-ever influencer workflow for a brand campaign — AI-assisted scouting criteria, platform tools (MightyScout, Upfluence), creator outreach templates, and a 23-creator shortlist tailored to Don Julio's positioning.</p>
+                  <p>Built Flam's first-ever influencer workflow — AI-assisted scouting criteria, platform tools (<span class="tool-chip">MightyScout</span>, <span class="tool-chip">Upfluence</span>), creator outreach templates, and a <span class="metric">23-creator shortlist</span> tailored to campaign positioning.</p>
                 </article>
                 <article class="proof-item">
                   <strong>Multi-stakeholder management</strong>
@@ -512,30 +593,32 @@
 
             <section class="skill-area">
               <div class="skill-area-header">
-                <p class="eyebrow">Brand Design &amp; Creative Production</p>
-                <p class="skill-headline">Brand built from zero — positioning, voice, and visual materials.</p>
+                <span class="section-count">04 / 05</span>
+                <p class="eyebrow">Email Marketing</p>
+                <p class="skill-headline"><span class="metric">48%</span> average open rate. Full-stack campaign operator.</p>
               </div>
               <div class="skill-proof">
                 <article class="proof-item">
-                  <strong>Storia brand foundation</strong>
-                  <p>Built the full brand identity from zero: external tagline, full positioning line, core brand belief, and a voice guide specific enough for the founder to use without me in the room.</p>
-                </article>
-                <article class="proof-item">
-                  <strong>Event collateral &amp; visual design</strong>
-                  <p>Designed event booth posters and promotional materials for Storia's in-person education events, using Canva for rapid iteration and polished founder-ready materials. Created sales enablement assets and OOH demo content at Flam for accounts including AT&amp;T, Google, Mattel, and Diageo.</p>
+                  <strong>End-to-end campaign stack</strong>
+                  <p>Ran acquisition campaigns using <span class="tool-chip">Apollo</span> for prospecting, <span class="tool-chip">Smartleads</span> for email execution, and <span class="tool-chip">Dripify</span> for LinkedIn automation — all running in parallel as a unified motion.<br>Prospected <span class="metric">200+ companies</span>, wrote the full outreach sequence, got copy approved by CMO, and sent <span class="metric">1,000+ emails</span>. <span class="metric">48% average open rate</span>. <span class="metric">12 meetings booked</span>.</p>
                 </article>
               </div>
             </section>
 
             <section class="skill-area">
               <div class="skill-area-header">
+                <span class="section-count">05 / 05</span>
                 <p class="eyebrow">Events &amp; Experiential</p>
-                <p class="skill-headline">$25K NYC launch. AdWeek. DMWF.</p>
+                <p class="skill-headline"><span class="metric">$25K</span> US launch. Event collateral. Industry event booths.</p>
               </div>
               <div class="skill-proof">
                 <article class="proof-item">
                   <strong>Flam NYC Market Launch Event</strong>
-                  <p>Planned, budgeted, decorated, and produced Flam's NYC market entry event — $25K budget, full experiential activations, product demos, and CEO keynote. Owned every detail from venue to vibe.</p>
+                  <p>Planned, budgeted, and produced Flam's NYC market entry event — <span class="metric">$25K budget</span>, full experiential activations, product demos, and CEO keynote. Owned every detail from venue to vibe.</p>
+                </article>
+                <article class="proof-item">
+                  <strong>Event collateral &amp; visual design</strong>
+                  <p>Designed event booth posters and promotional materials for Storia's in-person education events, using <span class="tool-chip">Canva</span> for rapid iteration and polished founder-ready materials. Created sales enablement assets and OOH demo content at Flam for accounts including Google, Mattel, and Diageo.</p>
                 </article>
                 <article class="proof-item">
                   <strong>AdWeek &amp; Digital Marketing World Forum</strong>
@@ -544,22 +627,6 @@
               </div>
             </section>
 
-            <section class="skill-area">
-              <div class="skill-area-header">
-                <p class="eyebrow">Email Marketing</p>
-                <p class="skill-headline">74% open rate. Full-stack campaign operator.</p>
-              </div>
-              <div class="skill-proof">
-                <article class="proof-item">
-                  <strong>End-to-end campaign stack</strong>
-                  <p>Ran coordinated acquisition campaigns using Apollo for prospecting, Smartleads for email execution, and Dripify for LinkedIn automation — all running in parallel as a unified motion.</p>
-                </article>
-                <article class="proof-item">
-                  <strong>74% open rate — 12 meetings booked</strong>
-                  <p>Prospected 200+ companies, wrote the full outreach sequence, got copy approved by the CMO, and sent 1,000+ emails using Apollo, Smartleads, and Dripify running in parallel. 74% open rate. 12 meetings booked. Reported results directly to the CEO.</p>
-                </article>
-              </div>
-            </section>
           </div>
         </div>
       </section>
