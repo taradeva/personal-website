@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-label="Don Julio x Flam Dia de Muertos campaign cover">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#100908"/><stop offset=".5" stop-color="#5b1f17"/><stop offset="1" stop-color="#0c1114"/></linearGradient>
+    <radialGradient id="glow" cx=".56" cy=".45" r=".7"><stop offset="0" stop-color="#f3a21a" stop-opacity=".42"/><stop offset=".42" stop-color="#b95220" stop-opacity=".18"/><stop offset="1" stop-color="#100908" stop-opacity="0"/></radialGradient>
+    <clipPath id="artClip"><rect x="476" y="54" width="312" height="572" rx="34"/></clipPath>
+    <style>.sans{font-family:Arial,Helvetica,sans-serif}.serif{font-family:Georgia,serif}</style>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg)"/>
+  <rect width="1200" height="680" fill="url(#glow)"/>
+  <circle cx="104" cy="112" r="72" fill="#f3a21a" opacity=".15"/>
+  <circle cx="1016" cy="550" r="116" fill="#1f55c8" opacity=".12"/>
+  <path d="M0 560c160-80 345-116 555-108 226 9 414 82 564 218H0z" fill="#f3a21a" opacity=".08"/>
+  <g transform="translate(72 94)">
+    <text class="sans" x="0" y="0" font-size="16" letter-spacing="7" fill="#f3a21a">CAMPAIGN EXECUTION</text>
+    <text class="serif" x="0" y="92" font-size="72" font-weight="600" fill="#fffaf2">Don Julio x Flam</text>
+    <text class="sans" x="0" y="142" font-size="28" letter-spacing="4" fill="#f5d9b8">DIA DE MUERTOS MIXED REALITY</text>
+    <text class="sans" x="0" y="206" font-size="22" fill="#e8c8a6">Campaign lead · Brand communications · PR &amp; creator strategy</text>
+    <rect x="0" y="260" width="178" height="44" rx="22" fill="#f3a21a"/>
+    <text class="sans" x="89" y="288" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="2" fill="#170e09">LIVE CAMPAIGN</text>
+  </g>
+  <g transform="translate(430 28)">
+    <ellipse cx="205" cy="614" rx="176" ry="34" fill="#000" opacity=".42"/>
+    <rect x="40" y="18" width="392" height="626" rx="56" fill="#050505" opacity=".82"/>
+    <image href="don-julio-hero-experience.png" x="60" y="42" width="352" height="584" preserveAspectRatio="xMidYMid slice" clip-path="url(#artClip)"/>
+    <rect x="54" y="36" width="364" height="596" rx="46" fill="none" stroke="#f5d9b8" stroke-width="2" opacity=".52"/>
+  </g>
+  <g transform="translate(880 142)">
+    <rect width="242" height="392" fill="#17100d" opacity=".9" stroke="#6f3a25"/>
+    <text class="serif" x="34" y="72" font-size="68" font-weight="600" fill="#fffaf2">238K</text>
+    <text class="sans" x="36" y="112" font-size="18" letter-spacing="4" fill="#f5d9b8">POST + STORY</text>
+    <text class="sans" x="36" y="140" font-size="18" letter-spacing="4" fill="#f5d9b8">IMPRESSIONS</text>
+    <path d="M36 194h168" stroke="#74513c" stroke-width="2"/>
+    <text class="serif" x="34" y="272" font-size="72" font-weight="600" fill="#fffaf2">417</text>
+    <text class="sans" x="36" y="312" font-size="18" letter-spacing="4" fill="#f5d9b8">ENTRIES INTO</text>
+    <text class="sans" x="36" y="340" font-size="18" letter-spacing="4" fill="#f5d9b8">EXPERIENCE</text>
+  </g>
+  <text class="sans" x="78" y="586" font-size="14" letter-spacing="5" fill="#f3a21a">OFFICIAL SOCIAL ASSET · DIAGEO / DON JULIO · FLAM US LAUNCH</text>
+</svg>

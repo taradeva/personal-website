@@ -60,15 +60,23 @@
       }
 
       .resume-nav {
-        align-items: center;
         background: rgba(251, 250, 246, 0.92);
         border-bottom: 1px solid var(--border);
-        display: flex;
-        justify-content: center;
-        padding: 18px max(22px, calc((100vw - 1100px) / 2));
+        left: 0;
+        padding: 18px 0;
         position: sticky;
         top: 0;
+        width: 100%;
         z-index: 10;
+      }
+
+      .resume-nav-inner {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1100px;
+        padding: 0 22px;
       }
 
       .resume-brand {
@@ -77,6 +85,25 @@
         font-size: 26px;
         font-weight: 600;
         text-decoration: none;
+      }
+
+      .resume-links {
+        align-items: center;
+        display: flex;
+        gap: 30px;
+      }
+
+      .resume-links a {
+        color: var(--muted);
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color 0.2s ease;
+      }
+
+      .resume-links a:hover {
+        color: var(--accent);
       }
 
       .resume-wrap {
@@ -217,7 +244,33 @@
         margin-bottom: 22px;
       }
 
-      .diff-card p:not(.diff-school) {
+      .diff-role {
+        color: var(--accent);
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 22px;
+      }
+
+      .subtle-link {
+        color: inherit;
+        text-decoration-color: rgba(127, 93, 67, 0.45);
+        text-decoration-line: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+
+      .subtle-link:hover {
+        text-decoration-color: var(--accent);
+      }
+
+      .diff-divider {
+        background: var(--border);
+        height: 1px;
+        margin: 28px auto;
+        width: 78%;
+      }
+
+      .diff-card p:not(.diff-school):not(.diff-role) {
         color: var(--muted);
         font-size: 15px;
         line-height: 1.72;
@@ -317,12 +370,32 @@
         .skill-area-header {
           position: static;
         }
+
+        .resume-nav-inner {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .resume-links {
+          flex-wrap: wrap;
+          gap: 14px 22px;
+        }
       }
     </style>
   </head>
   <body>
     <nav class="resume-nav" aria-label="Resume navigation">
-      <a class="resume-brand" href="../index.html">Tara Devaraj</a>
+      <div class="resume-nav-inner">
+        <a class="resume-brand" href="../index.html#/">Tara Devaraj</a>
+        <div class="resume-links">
+          <a href="../index.html#/">Portfolio</a>
+          <a href="index.html">Resume</a>
+          <a href="../index.html#/tools">Tools I've Tried</a>
+          <a href="../index.html#/">About</a>
+          <a href="mailto:taradevaraj@gmail.com">Contact</a>
+        </div>
+      </div>
     </nav>
 
     <header class="resume-wrap resume-hero">
@@ -358,20 +431,23 @@
             <article class="diff-card">
               <span>Tech Foundation</span>
               <h3>B.S. Computer Science</h3>
-              <p class="diff-school">University of Notre Dame</p>
+              <p class="diff-school">University of Notre Dame<br>Aug 2020 - May 2024</p>
               <p>I learn new platforms in hours, not weeks. My CS background means I understand how tools actually work, which makes me faster to adopt them and better at knowing when to trust (or question) what they produce. AI tools aren't a novelty to me. They're part of how I work every day, and I have the technical foundation to evaluate them critically.</p>
             </article>
             <article class="diff-card">
               <span>Food &amp; Beverage</span>
               <h3>Culinary Arts</h3>
-              <p class="diff-school">Culinary Institute of America</p>
+              <p class="diff-school">Culinary Institute of America<br>Sep 2024 - Apr 2025</p>
               <p>I understand food and beverage from the inside. Culinary school taught me to care about sourcing, flavor, craft, and the story behind what's on the table, exactly what brands like Twisted Alchemy are built on. I'm not a marketer who learned to talk about food. I cooked it. That changes how I think about product storytelling, wellness culture, and what makes someone reach for something.</p>
             </article>
             <article class="diff-card">
               <span>Startup Operator</span>
               <h3>Different Hat, Every Week</h3>
-              <p class="diff-school">Flam · Direct report to CEO</p>
+              <p class="diff-school"><a class="subtle-link" href="https://flamapp.ai/" target="_blank" rel="noreferrer">Flam</a> · Direct report to CEO<br>Apr 2025 - Jan 2026</p>
               <p>At Flam I was the single external-facing operator on every major US account — writing campaign copy, managing influencer strategy, running a $25K launch event, building GTM motions from scratch, and onboarding new hires, sometimes in the same week. I thrive without hand-holding. I see what needs to get done and I do it.</p>
+              <div class="diff-divider" aria-hidden="true"></div>
+              <p class="diff-role"><a class="subtle-link" href="https://storia.kids/#top" target="_blank" rel="noreferrer">Storia</a> · Freelance<br>Mar 2026 - Present</p>
+              <p>Building brand voice, audience strategy, and a pilot GTM structure for a founder-led literacy product serving neurodivergent K-1 readers.</p>
             </article>
           </div>
         </div>
@@ -379,28 +455,23 @@
 
       <section id="experience" class="section">
         <div class="resume-wrap">
-          <div class="section-heading">
+          <div class="section-heading section-heading--center">
             <h2>What I've actually done.</h2>
-            <p>Mapped to the skills that matter most for this kind of role.</p>
           </div>
           <div class="skill-areas">
             <section class="skill-area">
               <div class="skill-area-header">
                 <p class="eyebrow">Social Media &amp; Content Creation</p>
-                <p class="skill-headline">I shoot, edit, write, and publish. Not just brief.</p>
+                <p class="skill-headline">I shoot, edit, write, and publish.</p>
               </div>
               <div class="skill-proof">
                 <article class="proof-item">
-                  <strong>@life.bytara — 365 days of content</strong>
-                  <p>Posting every single day of 2026. Reels, carousels, stories — all shot, edited, written, and published by me. I built the content system and editorial calendar from scratch and run it entirely solo.</p>
-                </article>
-                <article class="proof-item">
                   <strong>Flam Instagram — 21 published posts</strong>
-                  <p>Created and published 21 posts on Flam's brand Instagram during my tenure. Concepts, copy, and creative direction across product launches, campaign moments, and brand storytelling.</p>
+                  <p>Created and published 21 posts on Flam's brand Instagram during my tenure, including brand storytelling, short-form edits, and campaign content across collabs.<br>Used OneUp to schedule and manage content across Instagram, TikTok, YouTube Shorts, and LinkedIn, adapting copy, timing, and formats by platform.</p>
                 </article>
                 <article class="proof-item">
-                  <strong>Video editing with CapCut</strong>
-                  <p>Edit short-form video natively — Reels, campaign clips, social content. CapCut is my primary tool; I understand what makes a cut land, not just how to make one.</p>
+                  <strong><a href="https://instagram.com/life.bytara" target="_blank" rel="noreferrer">@life.bytara — my personal brand</a></strong>
+                  <p>Reels, carousels, stories — all shot, edited in CapCut, written, and published by me.</p>
                 </article>
               </div>
             </section>
@@ -413,15 +484,11 @@
               <div class="skill-proof">
                 <article class="proof-item">
                   <strong>Don Julio × Flam — Día de Muertos</strong>
-                  <p>Wrote the launch caption for Diageo's AR campaign, revised directly with the global brand team and CMO. Ran across Don Julio's Instagram (468K followers) and Flam's Instagram (715K followers) — 78K combined impressions.</p>
+                  <p>Led campaign messaging end-to-end for Diageo's AR collab — developing positioning, writing copy across all campaign touchpoints, and working directly with Diageo's PR team on how to frame the partnership publicly. All copy revised with the global brand team and signed off by the CMO. Ran across Don Julio's Instagram (468K followers) and Flam's Instagram (715K followers), driving 238K impressions.</p>
                 </article>
                 <article class="proof-item">
                   <strong>Flam Cast — founder thought leadership</strong>
-                  <p>Filmed and produced Flam's executive content series in NYC, positioning the founder as an expert in conversation with senior marketing leaders. Guests included the CEO of Canvas Worldwide and the founder of LUMA Partners.</p>
-                </article>
-                <article class="proof-item">
-                  <strong>Storia brand voice guide</strong>
-                  <p>Built Storia's brand voice from scratch — tone parameters, language rules, and messaging frameworks for three distinct audience tiers (parents, educators, therapists).</p>
+                  <p>Filmed and produced Flam's executive content series in NYC, positioning the founder as an expert in conversation with senior marketing leaders. Guests included the former CMO of McDonald's and the CEO of LUMA Partners; the series drove 3.8M impressions.</p>
                 </article>
               </div>
             </section>
@@ -429,20 +496,16 @@
             <section class="skill-area">
               <div class="skill-area-header">
                 <p class="eyebrow">Influencer &amp; Partnerships</p>
-                <p class="skill-headline">Built Diageo's first influencer program for a Flam campaign. 23 creators sourced and shortlisted.</p>
+                <p class="skill-headline">23 creators sourced, vetted, and managed.</p>
               </div>
               <div class="skill-proof">
                 <article class="proof-item">
                   <strong>Don Julio influencer strategy</strong>
-                  <p>Built Flam's first-ever influencer workflow for a brand campaign — scouting criteria, platform tools (MightyScout, Upfluence), creator outreach templates, and a 23-creator shortlist tailored to Don Julio's positioning. Campaign drove 78K combined impressions across both accounts.</p>
+                  <p>Built Flam's first-ever influencer workflow for a brand campaign — AI-assisted scouting criteria, platform tools (MightyScout, Upfluence), creator outreach templates, and a 23-creator shortlist tailored to Don Julio's positioning.</p>
                 </article>
                 <article class="proof-item">
                   <strong>Multi-stakeholder management</strong>
                   <p>Managed simultaneous relationships across Diageo's global brand team, Gale agency, and Flam's internal team. I was the single external point of contact for all campaign communication — no dropped balls.</p>
-                </article>
-                <article class="proof-item">
-                  <strong>Tool fluency</strong>
-                  <p>MightyScout and Upfluence for creator research and vetting. These workflows map directly to Aspire — same logic, different interface. I adapt to the platform, not the other way around.</p>
                 </article>
               </div>
             </section>
@@ -455,15 +518,11 @@
               <div class="skill-proof">
                 <article class="proof-item">
                   <strong>Storia brand foundation</strong>
-                  <p>Built the full brand identity from zero: external tagline, full positioning line, core brand belief, and a voice guide specific enough for the founder to use without me in the room. This is the hardest kind of brand work — no brief, no budget, no precedent.</p>
+                  <p>Built the full brand identity from zero: external tagline, full positioning line, core brand belief, and a voice guide specific enough for the founder to use without me in the room.</p>
                 </article>
                 <article class="proof-item">
                   <strong>Event collateral &amp; visual design</strong>
-                  <p>Designed event booth posters and promotional materials for Storia's in-person education events. Created sales enablement assets and OOH demo content at Flam for accounts including AT&amp;T, Google, Mattel, and Diageo.</p>
-                </article>
-                <article class="proof-item">
-                  <strong>Production tools</strong>
-                  <p>Canva for design and rapid production. CapCut for video editing — Reels, campaign clips, short-form social. My CS background means I pick up new tools fast; the interface is never the bottleneck.</p>
+                  <p>Designed event booth posters and promotional materials for Storia's in-person education events, using Canva for rapid iteration and polished founder-ready materials. Created sales enablement assets and OOH demo content at Flam for accounts including AT&amp;T, Google, Mattel, and Diageo.</p>
                 </article>
               </div>
             </section>
@@ -471,7 +530,7 @@
             <section class="skill-area">
               <div class="skill-area-header">
                 <p class="eyebrow">Events &amp; Experiential</p>
-                <p class="skill-headline">$25K NYC launch. AdWeek. DMWF. SF panels.</p>
+                <p class="skill-headline">$25K NYC launch. AdWeek. DMWF.</p>
               </div>
               <div class="skill-proof">
                 <article class="proof-item">
@@ -481,10 +540,6 @@
                 <article class="proof-item">
                   <strong>AdWeek &amp; Digital Marketing World Forum</strong>
                   <p>Set up and staffed booths at AdWeek and DMWF. Managed brand presence, collateral, and on-the-floor conversations with marketing decision-makers.</p>
-                </article>
-                <article class="proof-item">
-                  <strong>SF panels &amp; field activations</strong>
-                  <p>Planned and ran two panel events at Flam's SF office — speaker coordination, logistics, and day-of production. Also attended 7 targeted industry events in San Francisco as part of a GTM acquisition motion; in-person outreach drove 4 of the meetings booked.</p>
                 </article>
               </div>
             </section>
@@ -500,8 +555,8 @@
                   <p>Ran coordinated acquisition campaigns using Apollo for prospecting, Smartleads for email execution, and Dripify for LinkedIn automation — all running in parallel as a unified motion.</p>
                 </article>
                 <article class="proof-item">
-                  <strong>74% email open rate</strong>
-                  <p>Achieved on the SF out-of-home billboard customer acquisition campaign. Wrote all copy, built the sequence, and reported results directly to the CEO.</p>
+                  <strong>74% open rate — 12 meetings booked</strong>
+                  <p>Prospected 200+ companies, wrote the full outreach sequence, got copy approved by the CMO, and sent 1,000+ emails using Apollo, Smartleads, and Dripify running in parallel. 74% open rate. 12 meetings booked. Reported results directly to the CEO.</p>
                 </article>
               </div>
             </section>

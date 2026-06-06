@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-label="Ghia speculative email marketing case study cover">
+  <defs>
+    <clipPath id="emailClip">
+      <rect x="482" y="122" width="612" height="334" rx="10"/>
+    </clipPath>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff8ee"/>
+      <stop offset=".52" stop-color="#ead7bf"/>
+      <stop offset="1" stop-color="#c87055"/>
+    </linearGradient>
+    <style>
+      .sans{font-family:Arial, Helvetica, sans-serif}
+      .serif{font-family:Georgia, 'Times New Roman', serif}
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg)"/>
+  <circle cx="1044" cy="100" r="178" fill="#fff8ee" opacity=".18"/>
+  <circle cx="98" cy="646" r="290" fill="#9e3f31" opacity=".16"/>
+  <path d="M0 146c87-31 174-44 262-37 72 6 141 24 205 55" fill="none" stroke="#c2a15e" stroke-width="3" opacity=".42"/>
+  <path d="M810 626c98-67 213-95 344-84" fill="none" stroke="#c2a15e" stroke-width="3" opacity=".42"/>
+
+  <rect x="54" y="54" width="1092" height="572" fill="none" stroke="#fff2e3" stroke-width="2" opacity=".8"/>
+  <g transform="translate(92 118)">
+    <text x="0" y="0" class="serif" font-size="44" fill="#2a1d1a">Ghia</text>
+    <text x="0" y="72" class="sans" font-size="16" letter-spacing="6" fill="#a24c34">SPECULATIVE CASE STUDY</text>
+    <text x="0" y="158" class="sans" font-size="58" font-weight="700" letter-spacing=".5" fill="#211d19">FROM</text>
+    <text x="0" y="224" class="sans" font-size="58" font-weight="700" letter-spacing=".5" fill="#211d19">DISCOVERY</text>
+    <text x="0" y="290" class="sans" font-size="58" font-weight="700" letter-spacing=".5" fill="#211d19">TO RITUAL</text>
+    <text x="0" y="350" class="sans" font-size="24" fill="#5d4c43">An email-led system for turning first curiosity into repeat behavior.</text>
+    <g transform="translate(0 402)">
+      <rect x="0" y="0" width="138" height="38" rx="19" fill="#211d19"/>
+      <text x="69" y="25" text-anchor="middle" class="sans" font-size="12" letter-spacing="2" fill="#fff8ee">EMAIL</text>
+      <rect x="152" y="0" width="136" height="38" rx="19" fill="#fff8ee" opacity=".72"/>
+      <text x="220" y="25" text-anchor="middle" class="sans" font-size="12" letter-spacing="2" fill="#713d31">SOCIAL</text>
+      <rect x="302" y="0" width="136" height="38" rx="19" fill="#fff8ee" opacity=".72"/>
+      <text x="370" y="25" text-anchor="middle" class="sans" font-size="12" letter-spacing="2" fill="#713d31">RETAIL</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="462" y="102" width="652" height="374" rx="14" fill="#fff8ee" opacity=".62"/>
+    <rect x="482" y="122" width="612" height="334" rx="10" fill="#f6eadb" stroke="#fff8ee" stroke-width="2"/>
+    <image href="ghia-email-flow.png" x="482" y="122" width="612" height="334" preserveAspectRatio="xMidYMid slice" clip-path="url(#emailClip)"/>
+    <rect x="482" y="122" width="612" height="334" rx="10" fill="none" stroke="#2a1d1a" stroke-width="2" opacity=".16"/>
+  </g>
+
+  <g transform="translate(520 520)">
+    <text x="0" y="0" class="sans" font-size="15" letter-spacing="4" fill="#843f30">WELCOME FLOW · RECIPE EDUCATION · PRODUCT EXPANSION · REFERRAL OFFER</text>
+  </g>
+</svg>

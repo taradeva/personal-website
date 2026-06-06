@@ -105,15 +105,18 @@ p {
   gap: 30px;
 }
 
-.nav-links button {
+.nav-links button,
+.nav-links a {
   color: var(--muted);
   font-size: 13px;
   letter-spacing: 0.08em;
+  text-decoration: none;
   text-transform: uppercase;
   transition: color 0.2s ease;
 }
 
-.nav-links button:hover {
+.nav-links button:hover,
+.nav-links a:hover {
   color: var(--accent);
 }
 
@@ -172,6 +175,7 @@ p {
 .portrait {
   aspect-ratio: 4 / 5;
   border: 1px solid var(--border);
+  border-radius: 22px;
   height: auto;
   object-fit: cover;
   width: min(100%, 400px);
@@ -383,12 +387,13 @@ figcaption {
 .workflow-grid {
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .workflow-card {
   background: var(--bg);
   border: 1px solid var(--border);
+  min-height: 220px;
 }
 
 .workflow-card img {
@@ -464,6 +469,7 @@ figcaption {
   position: absolute;
   top: 0;
   transition: opacity 0.25s ease;
+  z-index: 3;
 }
 
 .project-card:hover .project-overlay {
@@ -667,6 +673,14 @@ figcaption {
   line-height: 1.78;
 }
 
+.case-note {
+  color: var(--accent) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.04em;
+  line-height: 1.5 !important;
+  margin: -10px 0 18px;
+}
+
 .case-list {
   counter-reset: case-list;
   display: grid;
@@ -822,6 +836,11 @@ figcaption {
   width: 100%;
 }
 
+.case-proof:not(.case-proof--paired) .asset-grid img {
+  height: auto;
+  object-fit: contain;
+}
+
 .case-proof--paired .asset-grid figure {
   height: 100%;
 }
@@ -843,7 +862,7 @@ figcaption {
   border-top: 1px solid var(--border);
   display: grid;
   gap: 0;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .stat {
@@ -871,6 +890,13 @@ figcaption {
   font-size: 14px;
   line-height: 1.35;
   margin-top: 12px;
+}
+
+.results-note {
+  color: var(--muted) !important;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  margin-top: 16px;
 }
 
 .reveal {
@@ -917,7 +943,8 @@ figcaption {
     display: flex;
   }
 
-  .nav-links button {
+  .nav-links button,
+  .nav-links a {
     padding: 14px 0;
     text-align: left;
     width: 100%;
