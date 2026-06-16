@@ -180,6 +180,27 @@ p {
   background: var(--bg-alt);
 }
 
+.fallback-container {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+.fallback-hero-grid,
+.fallback-about-grid {
+  align-items: center;
+  display: grid;
+  gap: 48px;
+  grid-template-columns: 1.05fr 0.8fr;
+}
+
+.fallback-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
 .home-page {
   background: var(--bg);
 }
@@ -1086,6 +1107,8 @@ figcaption {
 
   .fact-grid,
   .work-grid,
+  .fallback-hero-grid,
+  .fallback-about-grid,
   .meta-bar,
   .asset-grid,
   .case-proof--paired,

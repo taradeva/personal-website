@@ -15,19 +15,114 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main class="home-page">
+        <section class="hero-section section-pad">
+          <div class="fallback-container fallback-hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">Brand Marketing</p>
+              <h1>Tara Devaraj</h1>
+              <p class="hero-subhead">Brand builder. Cultural translator. Sharp writer.</p>
+              <p class="hero-desc">I help brands clarify what they stand for, then turn it into work that makes people feel something.</p>
+              <div class="fallback-actions">
+                <a class="btn btn-primary" href="#work">View My Work</a>
+                <a class="btn btn-secondary" href="mailto:taradevaraj@gmail.com">Get In Touch</a>
+              </div>
+            </div>
+            <figure>
+              <img class="portrait" src="assets/profile/tara-profile.jpg" alt="Portrait of Tara Devaraj" />
+              <figcaption>Brand Strategy · GTM · Creative Technology</figcaption>
+            </figure>
+          </div>
+        </section>
 
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/@remix-run/router@1/dist/router.umd.min.js"></script>
-    <script src="https://unpkg.com/react-router@6/dist/umd/react-router.production.min.js"></script>
-    <script src="https://unpkg.com/react-router-dom@6/dist/umd/react-router-dom.production.min.js"></script>
+        <section id="work" class="section-pad">
+          <div class="fallback-container">
+            <div class="section-heading">
+              <h2>Selected Work</h2>
+              <p>Case studies, brand strategy, and speculative campaigns.</p>
+            </div>
+            <div class="work-grid">
+              <a class="project-card" href="#/case-study/don-julio">
+                <div class="project-image">
+                  <img src="assets/don-julio/djxflam-cover.png" alt="Don Julio project visual" />
+                </div>
+                <div class="project-body">
+                  <div class="project-tags">
+                    <span>Campaign Execution</span><span>PR & Influencer</span><span>Copy</span>
+                  </div>
+                  <h3>Don Julio x Flam - Dia de Muertos</h3>
+                  <p>Managed a campaign from ideation to polished executed assets, owning client coordination, influencer workflow, and launch communications.</p>
+                  <strong>View case study →</strong>
+                </div>
+              </a>
+              <a class="project-card" href="#/case-study/ghia">
+                <div class="project-image">
+                  <img src="assets/ghia/ghia-email-flow.png" alt="Ghia project visual" />
+                </div>
+                <div class="project-body">
+                  <div class="project-tags">
+                    <span>Speculative Case Study</span><span>Brand Strategy</span><span>Email Marketing</span>
+                  </div>
+                  <h3>Ghia - From Discovery to Ritual</h3>
+                  <p>Built a speculative growth strategy for a premium non-alc brand, connecting social content, creator partnerships, email, and retail activation into one repeat-purchase system.</p>
+                  <strong>View case study →</strong>
+                </div>
+              </a>
+              <a class="project-card" href="#/case-study/storia">
+                <div class="project-image">
+                  <img src="assets/storia/storia-homepage.png" alt="Storia project visual" />
+                </div>
+                <div class="project-body">
+                  <div class="project-tags">
+                    <span>Brand Strategy</span><span>GTM</span><span>Startup</span>
+                  </div>
+                  <h3>Storia - Building Brand from Zero</h3>
+                  <p>I built early brand voice, audience strategy, and go-to-market structure for a founder-led literacy product serving neurodivergent readers.</p>
+                  <strong>View case study →</strong>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section-pad section-alt">
+          <div class="fallback-container fallback-about-grid">
+            <div>
+              <p class="eyebrow">About</p>
+              <div class="bio-copy">
+                <p>I'm a brand marketer with an unusual background: <strong>computer science</strong>, <strong>culinary school</strong>, and startup work that sat between <strong>sales</strong>, <strong>creative</strong>, and executive decision-making.</p>
+                <p>Computer science taught me to learn new tools quickly and think through problems structurally. Culinary school taught me urgency, leadership, and creative judgment in fast-changing environments.</p>
+                <p>I am strongest with brands where marketing has to connect the story, the product, and the way people actually behave - then turn that understanding into work people can feel and act on.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+    <script src="https://unpkg.com/@remix-run/router@1.16.1/dist/router.umd.min.js"></script>
+    <script src="https://unpkg.com/react-router@6.23.1/dist/umd/react-router.production.min.js"></script>
+    <script src="https://unpkg.com/react-router-dom@6.23.1/dist/umd/react-router-dom.production.min.js"></script>
     <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      const staticFallback = rootElement.innerHTML;
+      const restoreFallback = () => {
+        if (!rootElement.textContent.trim()) {
+          rootElement.innerHTML = staticFallback;
+        }
+      };
+
+      window.addEventListener("error", restoreFallback);
+      window.addEventListener("unhandledrejection", restoreFallback);
+
       const { useEffect, useState } = React;
       const { HashRouter, Routes, Route, Link, useLocation, useNavigate } = ReactRouterDOM;
 
@@ -653,7 +748,12 @@
         );
       }
 
-      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+      try {
+        ReactDOM.createRoot(rootElement).render(<App />);
+      } catch (error) {
+        rootElement.innerHTML = staticFallback;
+        console.error("Portfolio render failed; restored static fallback.", error);
+      }
     </script>
   </body>
 </html>
